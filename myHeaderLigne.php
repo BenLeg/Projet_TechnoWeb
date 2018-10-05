@@ -3,11 +3,14 @@
 <html>
 <head><link rel="stylesheet" href="style.css" /></head>
 
+
 <header>
-	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="mcss/common.css" />
 
 <div id="conteneur1">
-	<div class="element1"> <a id="nomdusite" href="test.php">MonSiteWeb</a> </div>
+<div class='element3'>	<img src="images/macaps.png" width="50px">	</div>
+
+	<div class="element1">  <a id="nomdusite" href="test.php">SiteWeb</a> </div>
 
 	<div class="element2">	
 		<form id="connexion" action='test.php' method='get'>
@@ -23,11 +26,10 @@
 
 <div id="conteneur2">
 
-    <div class="element2"><input type="text" placeholder="Search.."></div>
+    <div class="elem1"><input type="text" placeholder="Search.."></div>
 
-    <div class="element2"> <a id="produits" href="produits.php">LesProduits</a> </div>
-
-    <div class="element2"> <a id="panier" href="panier.php">MonPanier</a> </div>
+    <div class="elem2"> <a id="produits" href="produits.php">LesProduits</a> </div>
+    <div class="elem3"> <a id="panier" href="panier.php">MonPanier</a> </div>
 
 </div>
 	
