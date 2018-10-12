@@ -17,6 +17,7 @@
 	catch (Exception $e)	{	        die('Erreur : ' . $e->getMessage());		}
 	
 	$user_id = '';
+	$co=false;
 
     if (	isset($_POST['identifiant']) AND isset($_POST['mdp'])  ){
     	$identifiant = $_POST['identifiant'] ;
@@ -26,6 +27,8 @@
     	while($donnee != null){
     		if($donnee['username']==$identifiant AND $donnee['password']==$mdp){
     			$user_id = $donnee['id'];
+    			echo 'vous etes co';
+				$co=true;
     		}
     		$donnee = $result->fetch();
     	} 
@@ -34,6 +37,19 @@
 
 
     ?>
+<script type="text/javascript">
+	var co = parseInt('<?php echo $co; ?>') ;
+	if(co=true){
+		document.querySelector(".co").style.display="block";
+		document.querySelector(".deco").style.display="none";
+	}
+	else{
+		document.querySelector(".co").style.display="none";
+		document.querySelector(".deco").style.display="block";
+	}
+
+</script>
+
 
 
 
@@ -44,7 +60,8 @@
 	<div class="element1">  <a id="nomdusite" href="myHeaderLigne.php">Ma Capsule</a> </div>
 	<div class="element2" id="deco">
 		<form id="connexion"  method='post'> 
-		Username : <input type='text' name='identifiant' />	<input type='Submit' value='Valider'>
+		Username : <input type='text' name='identifiant' />
+		<input type='Submit' value='Envoyer'>
 		</br>
 		Password : <input type='text' name='mdp'/> 
 		</form> 
@@ -52,11 +69,11 @@
 
 	<div class="element2" id="co">	
 	</br>
-		Bonjour <?php ?>
+		Bonjour <?php echo $identifiant  ?>
 		Vous êtes connecté.
 		</form>
-
 	</div>
+
 </div>
 
 <div id="conteneur2">
