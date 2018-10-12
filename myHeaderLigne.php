@@ -27,7 +27,7 @@
     	while($donnee != null){
     		if($donnee['username']==$identifiant AND $donnee['password']==$mdp){
     			$user_id = $donnee['id'];
-    			echo 'vous etes co';
+//    			echo 'vous etes co';
 				$co=true;
     		}
     		$donnee = $result->fetch();
@@ -61,7 +61,7 @@
 	<div class="element2" id="deco">
 		<form id="connexion"  method='post'> 
 		Username : <input type='text' name='identifiant' />
-		<input type='Submit' value='Envoyer'>
+		<input type='submit' value='Envoyer'>
 		</br>
 		Password : <input type='text' name='mdp'/> 
 		</form> 
