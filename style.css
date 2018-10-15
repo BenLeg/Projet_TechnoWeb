@@ -149,7 +149,7 @@ img{
     font-size: x-large;
 }
 
-#selected_product input[type=submit] 
+.selected_product input[type=submit] 
 {
     width:50%;
     cursor:pointer;
@@ -161,12 +161,12 @@ img{
     margin-left: 40%;
 }
 
-#selected_product input[type=submit]:hover
+.selected_product input[type=submit]:hover
 {
     box-shadow: 1px 1px 6px black;
 }
 
-#selected_product input[type=int] 
+.selected_product input[type=int] 
 {
     width:8%;
     font-size: xx-large;
