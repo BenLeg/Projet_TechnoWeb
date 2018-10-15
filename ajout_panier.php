@@ -13,7 +13,7 @@
         <?php
             $id = $_GET['id'];
             $quantity = $_POST['quantity'];
-            if(empty($user_id)){
+            if(empty($_GET['user'])){
                 ?>
                 <div class="pasco">
                     <h>Avant d'ajouter vos articles dans votre panier :</h>
@@ -32,15 +32,7 @@
             <?php 
             }
             else{
-                /*$req = $bdd->prepare('INSERT INTO jeux_video(nom, possesseur, console, prix, nbre_joueurs_max, commentaires) VALUES(:nom, :possesseur, :console, :prix, :nbre_joueurs_max, :commentaires)');
-            $req->execute(array(
-                'nom' => $nom,
-                'possesseur' => $possesseur,
-                'console' => $console,
-                'prix' => $prix,
-                'nbre_joueurs_max' => $nbre_joueurs_max,
-                'commentaires' => $commentaires
-                ));*/
+                /*Inserer commande dans bdd*/
             ?>
             <section>
                 <div id="cadre_princ">
