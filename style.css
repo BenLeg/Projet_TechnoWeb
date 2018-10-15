@@ -41,7 +41,7 @@ header {
 
 .element2 { padding-left: 60px; }
 
-#conteneur1 input[type=submit], #conteneur2 input[type=text], #conteneur1 input[type=text]{
+#conteneur1 input[type=submit], #conteneur2 input[type=text], #conteneur1 input[type=text],  #conteneur1 input[type=password]{
     border-radius: 5px;
     box-shadow: none;
     border: none;

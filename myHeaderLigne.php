@@ -59,7 +59,7 @@
 		Username : <input type="text" name="identifiant" />
 		<input type="submit" value="Envoyer" />
 		</br>
-		Password : <input type="text" name="mdp"/> 
+		Password : <input type="password" name="mdp"/> 
 		</form> 
 	</div>
 
