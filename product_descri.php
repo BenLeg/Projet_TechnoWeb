@@ -14,7 +14,7 @@ catch (Exception $e)
 <html>
 	<head>
 		<title>Capsules.com</title>
-		<link rel="stylesheet" href="product_css.css" />
+		<link rel="stylesheet" href="style.css" />
 	</head>
 
 	<header>
