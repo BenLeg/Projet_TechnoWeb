@@ -46,7 +46,7 @@ catch (Exception $e)
                         </tr></tbody>
                     </table>
                     <form  action="ajout_panier.php?id=<?php echo $donnees['id']; ?>" method="post">
-                        <p1>Quantité : <input type="int" name="quantity" value="1" autofocus required /><br><br><br></p1>
+                        <p1>Quantité : <input type="int" name="quantity" value="1" autofocus required /><br><br></p1>
                         <p2><input type="submit" value="Ajouter au Panier" /></p2>
                     </form>
                 </div>
