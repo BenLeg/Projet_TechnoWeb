@@ -54,7 +54,7 @@ catch (Exception $e)
                             <figure>
                                 <?php 
                                     $image=$donnees['id'];
-                                    echo '<img src="Images/'.$image.'">';
+                                    echo '<img src="Images/'.$image.'" width="100%">';
                                 ?>
                                 <table>
                                     <thead><tr>
