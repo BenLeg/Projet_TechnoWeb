@@ -74,8 +74,7 @@
 
 <div id="conteneur2">
     
-    <div class="elem1"> <a id="produits" href="produits.php">LesProduits</a> </div>
-    <div class="elem2"><input type="text" href="search.php" value='Search'></div>
+    <div class="elem1"> <a id="produits" href="search_p.php">LesProduits</a> </div>
     <div class="elem3"> <a id="panier" href="panier.php">MonPanier</a> </div>
 
 </div>
