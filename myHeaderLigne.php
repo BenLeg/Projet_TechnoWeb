@@ -75,7 +75,7 @@
 <div id="conteneur2">
     
     <div class="elem1"> <a id="produits" href="search_p.php">LesProduits</a> </div>
-    <div class="elem3"> <a id="panier" href="panier.php">MonPanier</a> </div>
+    <div class="elem3"> <a id="panier" href="empty card.php">MonPanier</a> </div>
 
 </div>
 	
