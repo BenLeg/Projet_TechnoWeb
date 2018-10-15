@@ -34,6 +34,7 @@
 header {    
     background-color: rgba(0,0,0,0.8);
     padding: 5px;
+    margin-bottom: 15px;
 }
 
 .elem2:hover, .elem3:hover{ text-shadow: 1px 2px 2px grey;}
