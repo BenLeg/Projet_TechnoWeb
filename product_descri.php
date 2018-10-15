@@ -6,9 +6,8 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 
-	<header>
-        <h1><?php include 'myHeaderLigne.php'?></h1>  
-    </header>
+<?php include 'myHeaderLigne.php'?>  
+
     <body>
 
         <?php
