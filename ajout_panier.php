@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 
-<?php
-try
-{
-    $bdd = new PDO('mysql:host=localhost;dbname=capsules;charset=utf8', 'root', '');
-}
-catch (Exception $e)
-{
-        die('Erreur : ' . $e->getMessage());
-}
-?>
-
 <html>
 	<head>
 		<title>Capsules.com</title>
@@ -18,7 +7,7 @@ catch (Exception $e)
 	</head>
 
 	<header>
-        <h1>P'ISENLOVE</h1>  
+        <h1><?php include 'myHeaderLigne.php'?></h1>  
     </header>
     <body>
         <?php
