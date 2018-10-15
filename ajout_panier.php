@@ -22,19 +22,10 @@ catch (Exception $e)
     </header>
     <body>
         <?php
-            $id = $_GET['id'];
-            /*$user = $_GET['user'];*/
+            $product_id = $_GET['id'];
             $quantity = $_POST['quantity'];
 
-            /*$req = $bdd->prepare('INSERT INTO jeux_video(nom, possesseur, console, prix, nbre_joueurs_max, commentaires) VALUES(:nom, :possesseur, :console, :prix, :nbre_joueurs_max, :commentaires)');
-            $req->execute(array(
-                'nom' => $nom,
-                'possesseur' => $possesseur,
-                'console' => $console,
-                'prix' => $prix,
-                'nbre_joueurs_max' => $nbre_joueurs_max,
-                'commentaires' => $commentaires
-                ));*/
+            $req = $bdd->query('SELECT ');
         ?>
         <section>
             <div id="cadre_princ">

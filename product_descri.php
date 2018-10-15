@@ -24,7 +24,6 @@ catch (Exception $e)
 
         <?php
             $product_id = $_GET['id'];
-            /*$user = $_GET['username']*/
             $reponse = $bdd->query('SELECT * FROM products WHERE id=\'' . $product_id . '\'');
             $donnees = $reponse->fetch();
         ?>
