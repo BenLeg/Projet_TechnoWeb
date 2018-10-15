@@ -36,7 +36,7 @@
                         <h>Keep Shopping</h>
                     </div>
                 </a>
-                <a href="cart.php">
+                <a href="empty card.php">
                     <div class="check_cart">
                         <h>Check Cart</h>
                     </div>

@@ -69,7 +69,7 @@
 	</div>
 </a><br>
 
-	<a href="mettrelaboutique.html">Retour vers la boutique</a>
+	<a href="search_p.php">Retour vers la boutique</a>
 
 
 </body>
