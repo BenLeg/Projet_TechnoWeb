@@ -12,8 +12,8 @@
     <body>
         <?php
             $id = $_GET['id'];
-            /*$user = $_GET['user'];*/
             $quantity = $_POST['quantity'];
+
 
             /*$req = $bdd->prepare('INSERT INTO jeux_video(nom, possesseur, console, prix, nbre_joueurs_max, commentaires) VALUES(:nom, :possesseur, :console, :prix, :nbre_joueurs_max, :commentaires)');
             $req->execute(array(
