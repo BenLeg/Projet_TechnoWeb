@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <link rel="stylesheet" href="style.css" />
-	<title>Capsules.com</title>
-	<b><font size="+3">Votre Panier:</font><b>
-	<u><h3>Articles dans votre panier(<?php echo $quantity ?>)<h3></u>
-</head>
+<?php include 'myHeaderLigne.php'?>  
 
-<body>
-    <?php include 'myHeaderLigne.php'?>  
-
-    <?php
+<?php
         $UsID=1;/*$_GET['user'];*/
         $request="SELECT * FROM orders WHERE `type`='CART' AND user_id='" . $UsID . "'";
         $reponseorder=$bdd->query($request);
@@ -39,7 +31,15 @@
         echo $product_id
     ?>
 
-	<div id="paniervide">
+<head>
+    <link rel="stylesheet" href="style.css" />
+	<title>Capsules.com</title>
+	<b><font size="+3">Votre Panier:</font><b>
+	<u><h3>Articles dans votre panier(<?php echo $quantity ?>)<h3></u>
+</head>
+
+<body>
+    <div id="paniervide">
 		<a href="https://www.google.fr/?gws_rd=ssl">
 	<div id=article1>
 	
