@@ -13,6 +13,7 @@
         <?php
             $id = $_GET['id'];
             $quantity = $_POST['quantity'];
+            /*Si user no co*/
             if(empty($_GET['user'])){
                 ?>
                 <div class="pasco">
@@ -31,8 +32,79 @@
                 </div>
             <?php 
             }
+
+            /*si session utilisateur ouverte*/
             else{
-                /*Inserer commande dans bdd*/
+                $reponse = $bdd->prepare("SELECT * FROM orders WHERE user_id = :user_id AND status = :status");
+                $reponse->execute(array(
+                		'user_id'=>$_GET['user'],
+                		'status'=>'CART'
+                	));
+                $data=$reponse->fetch();
+                if(empty($data)) 						/*Si l'utilisateur n'a pas de panier :*/
+                { 
+					$reponse->closeCursor();
+					$reponse=$bdd->prepare("SELECT * from users WHERE id = :id");	
+                	$reponse->execute(array(
+                		'id'=>$_GET['user']
+                	));
+                	$data_user=$reponse->fetch();
+                	$billing_adress_id=$data_user['billing_adress_id'];
+                	$delivery_adress_id=$data_user['delivery_adress_id'];
+                	$reponse->closeCursor();
+                		/*On ajoute le nouveau panier correspondant au user co*/
+                	$requete = $bdd->prepare('INSERT INTO orders(user_id, type, status, billing_adress_id, delivery_adress_id) VALUES(:user_id, :type, :status, :billing_adress_id, :delivery_adress_id)');
+					$requete->execute(array(
+						'user_id' => $_GET['user'],
+						'type' => 'CART',
+						'status' => 'CART',
+						'billing_adress_id' => $billing_adress_id,
+						'delivery_adress_id' => $delivery_adress_id
+						));
+						/*On ajoute l'article dans orders_products */
+					$reponse=$bdd->prepare("SELECT * from orders WHERE user_id = :id AND type = :status");	
+                	$reponse->execute(array(
+                		'id'=>$_GET['user'],
+                		'status'=>'CART'
+                	));
+                	$data_order=$reponse->fetch();
+                	$current_order_id=$data_order['id'];
+                	$reponse->closeCursor();
+                	$reponse=$bdd->prepare("SELECT * from products WHERE id = :id");	
+                	$reponse->execute(array(
+                		'id'=>$id
+                	));
+                	$data_products=$reponse->fetch();
+                	$unit_price=$data_products['unit_price'];
+                	$reponse->closeCursor();
+                	    /*recuperation data utilisateur afin de creer nouvelle commande*/
+                	$requete = $bdd->prepare('INSERT INTO order_products(order_id, product_id, quantity,unit_price) VALUES(:order_id, :product_id, :quantity, :unit_price)');
+					$requete->execute(array(
+						'order_id' => $current_order_id,
+						'product_id' => $id,
+						'quantity' => $quantity,
+						'unit_price' =>$unit_price
+						));
+                }
+		        else /*Sinon on rajoute seulement les produits dans son panier actuel */
+                {
+                	$current_order_id=$data['id'];
+                	$reponse=$bdd->prepare("SELECT * from products WHERE id = :id");	
+                	$reponse->execute(array(
+                		'id'=>$id
+                	));
+                	$data_products=$reponse->fetch();
+                	$unit_price=$data_products['unit_price'];
+                	$reponse->closeCursor();
+                	    /*recuperation data utilisateur afin de creer nouvelle commande*/
+                	$requete = $bdd->prepare('INSERT INTO order_products(order_id, product_id, quantity,unit_price) VALUES(:order_id, :product_id, :quantity, :unit_price)');
+					$requete->execute(array(
+						'order_id' => $current_order_id,
+						'product_id' => $id,
+						'quantity' => $quantity,
+						'unit_price' =>$unit_price
+						));
+                }
             ?>
             <section>
                 <div id="cadre_princ">

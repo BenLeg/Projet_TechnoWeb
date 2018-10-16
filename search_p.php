@@ -57,6 +57,7 @@
                     </div>
             <?php                    
             }
+            $reponse->closeCursor();
             ?>
             </div>
     	</section>

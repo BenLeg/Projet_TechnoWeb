@@ -41,6 +41,7 @@
         <div class="descriptif">
             <h><?php echo $donnees['name']; ?></h>
             <p><?php echo $donnees['description'];?></p>
+            <?php $reponse->closeCursor(); ?>
         </div>
         </section>
     </body>
