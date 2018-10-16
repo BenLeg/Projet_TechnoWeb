@@ -32,7 +32,7 @@ die('Erreur: '.$e->getMessage());
 	  			<br>
 	  			<input class="login-input" type="password" name="confirm-password" placeholder="Confirmer mot de passe" required>
 	  			<br><br>
-	  			<input class="submit-input" type="submit" name="validation" value="Valider" href="seach_p.php">
+	  			<input class="submit-input" type="submit" name="validation" value="Valider">
 	  			<a class="lien" href="search_p.php">Connexion</a>
 	  			<img src = "images/logo.png" id="logo">
 	  			<br>
@@ -56,12 +56,13 @@ die('Erreur: '.$e->getMessage());
 
 				if($data == null){
 					$bdd->exec('INSERT INTO users(username,email,password) VALUES(\''.$username.'\',\''.$mail.'\',\''.$password.'\')');
-					echo "BLABLABLA";
+					header('Location: search_p.php');
+  					exit();
 				}
 				else{  echo "L'username existe deja"; }
 				
 			}
-			else{$erreur = "Les deux mots de passe sont différents.";}
+			else{echo "Les deux mots de passe sont différents.";}
 			}
 	?>
 </body>
