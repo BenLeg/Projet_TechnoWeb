@@ -54,9 +54,9 @@ header {
 
 #conteneur1 input[name="mdp"]{ margin-right: 65px; }
 
-#co {  margin-left: 150px; }
+#deconnexion {  margin-left: 225px; }
 
-#co {   display: none;  } 
+#hide {   display: none;  } 
 
 
 section

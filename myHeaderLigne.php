@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-
-<html>
-<head><link rel="stylesheet" href="style.css" /></head>
-
-
-<header>
-	<link rel="stylesheet" href="mcss/common.css" />
-
-
-
 
 <?php
 	
@@ -18,15 +7,31 @@
 	$user_id = '';
 	$co=false;
 
-    if (	isset($_POST['identifiant']) AND isset($_POST['mdp'])  ){
+	session_start ();
+	
+	if (isset($_POST['deco']) ){
+    		session_unset ();
+			session_destroy ();
+#	   		echo 'vous venez de vous déconnecter';  
+    }
+
+	if (isset($_SESSION['identifiant']) && isset($_SESSION['password'])) {
+#		echo "Vous etes connecté </br>";
+		$co=true;	
+	}
+
+	if(isset($_POST['identifiant']) AND isset($_POST['mdp'])  ){
     	$identifiant = $_POST['identifiant'] ;
     	$mdp = $_POST['mdp'] ;
     	$result = $bdd->query('SELECT * FROM users');
-    		$donnee = $result->fetch();
+    	$donnee = $result->fetch();
     	while($donnee != null){
     		if($donnee['username']==$identifiant AND $donnee['password']==$mdp){
     			$user_id = $donnee['id'];
-    			echo 'vous etes co';
+				$_SESSION['identifiant'] = $identifiant;
+				$_SESSION['password'] = $mdp;
+				$_SESSION['id'] = $user_id;
+#    			echo 'vous venez de vous connecter';
 				$co=true;
     		}
     		$donnee = $result->fetch();
@@ -35,39 +40,50 @@
     }
 
 
-    ?>
-<script type="text/javascript">
-	var co = parseInt('<?php echo $co; ?>') ;
-	if(co=true){
-		document.querySelector(".co").style.display="block";
-		document.querySelector(".deco").style.display="none";
-	}
-	else{
-		document.querySelector(".co").style.display="none";
-		document.querySelector(".deco").style.display="block";
-	}
+?>
 
-</script>
+
+<!DOCTYPE html>
+
+<html>
+<head><link rel="stylesheet" href="style.css" /></head>
+
+
+<header>
+
+
 
 <div id="conteneur1">
 
 	<div class="element3">	<img src="images/macaps.png" width="50px">	</div>
 
 	<div class="element1">  <a id="nomdusite" href="myHeaderLigne.php">Ma Capsule</a> </div>
-	<div class="element2" >
-		<form id="connexion" method="post"> 
-		Username : <input type="text" name="identifiant" />
-		<input type="submit" value="Envoyer" />
-		</br>
-		Password : <input type="password" name="mdp"/> 
-		</form> 
-	</div>
 
-	<div class="element2">	
-		<div id="co">
-		</br>
-		Bonjour <?php echo $identifiant  ?>
-		Vous êtes connecté.</div>
+	<div class="element2" >
+
+<?php 
+	if ($co==false){
+		echo '
+		<form id="connexion" method="post"> 
+			Username : <input type="text" name="identifiant" />
+			<input type="submit" value="Envoyer" />
+			</br>
+			Password : <input type="password" name="mdp"/> 
+			</form>
+
+		' ;
+	}
+		
+	else {
+		echo '
+		<form id="deconnexion" method="post">
+		    <div id="hide"> <input type="text" name="deco" value="decon"/> </div>
+	    	<input type="submit" value="Me déconnecter" />
+		</form>
+		';
+	}
+?>
+
 	</div>
 
 </div>
