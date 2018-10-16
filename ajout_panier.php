@@ -22,7 +22,7 @@
                             <h>Déjà client ?</h>
                             <p>Identifiez-vous</p>
                         </div>
-                    <a href="pageben.php">
+                    <a href="inscription.php">
                         <div id="sign_in">
                             <h>Nouveau ?</h>
                             <p>Inscrivez-vous</p>
