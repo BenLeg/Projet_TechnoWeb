@@ -32,7 +32,7 @@ die('Erreur: '.$e->getMessage());
 	  			<br>
 	  			<input class="login-input" type="password" name="confirm-password" placeholder="Confirmer mot de passe" required>
 	  			<br><br>
-	  			<input class="submit-input" type="submit" name="validation" value="Valider">
+	  			<input class="submit-input" type="submit" name="validation" value="Valider" href="search_p.php">
 	  			<a class="lien" href="search_p.php">Connexion</a>
 	  			<img src = "images/logo.png" id="logo">
 	  			<br>
@@ -43,11 +43,6 @@ die('Erreur: '.$e->getMessage());
 	<?php 
 	// On teste si le le client a appuye sur le bouton valider
 	if(isset($_POST['validation'])){
-
-		$mail = $_POST['mail'];
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$confirm_password=$_POST['confirm-password'];
 
 			// On verifie que les deux mots de passe saisis sont identiques
 			if( $password == $confirm_password){/*Manipulation de la BDD*/
