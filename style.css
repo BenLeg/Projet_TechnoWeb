@@ -174,6 +174,8 @@ aside p{
     text-align: center;
 }
 
+
+
 /* Design de la page liste des produits*/
 #conteneur_principal
 {
@@ -214,6 +216,8 @@ aside p{
 }
 
 /*Design de la page ajout_panier*/
+
+    /*si utilisateur connecté*/
 
 #cadre_princ
 {
@@ -256,4 +260,72 @@ aside p{
     cursor: pointer;
 }
 
+    /* utilisateur non connecté*/
+.pasco
+{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    justify-content: center;
+    border : 2px outset black;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    font-size: x-large;
+    padding: 10px;
+    margin: auto;
+    margin-top: 100px;
 
+}
+.pasco #log, .pasco #sign_in
+{
+    border : 1px solid black;
+    width: 100%;
+    font-size: large;
+    border-radius: 5px;
+    margin-top: 25px; 
+    margin-bottom: : 25px;
+}
+.pasco #log:hover, .pasco #sign_in:hover
+{
+    box-shadow: 2px 2px 2px #aaa;
+    cursor: pointer;
+}
+
+
+
+/*Design de la page cart */
+#paniervide{
+    font-style:
+    background-color:rgba(0,0,0,0.5);
+    font-size: xx-large;
+    text-align: center;
+    color: white;
+    height: 40px;
+}
+#article1{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 4px ;
+    text-decoration: none;              /*eviter le lien bleu ou violet*/
+    color: black;
+
+}
+#article1:hover{                        /* effet ombre quand on passe le curseur sur le conteneur */
+    box-shadow: 1px 1px 6px black;
+
+}#article1 .element{
+    width:12%;
+}
+#article1 img{
+    width:90%;
+    max-height: auto;                   /* image dans le conteneur*/
+    padding:5px;
+}
+
+#article1 table thead{                  /* taille de la police de la description de produit*/
+    font-size: x-large;
+}
+#article1 table tbody{                  /* taille de la police du prix et de la quantité souahité */
+    font-size: large;
+}
