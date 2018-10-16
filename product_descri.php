@@ -32,7 +32,7 @@
                             <td><?php echo $donnees['unit_price']; ?> €</td>
                         </tr></tbody>
                     </table>
-                    <form  action="ajout_panier.php?id=<?php echo $donnees['id']?>&user=<?php echo $user_id?>" ;  method="post">
+                    <form  action="ajout_panier.php?id=<?php echo $donnees['id']?>" ;  method="post">
                         <p1>Quantité : <input type="int" name="quantity" value="1" autofocus required /><br><br><br></p1>
                         <p2><input type="submit" value="Ajouter au Panier" /></p2>
                     </form>
