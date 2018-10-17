@@ -4,7 +4,7 @@
 <?php include 'myHeaderLigne.php'?>  
 
 <?php
-        $UsID=1;/*$_GET['user'];*/
+        $_SESSION['id'];/*$_GET['user'];*/
         $request="SELECT * FROM orders WHERE `type`='CART' AND user_id='" . $UsID . "'";
         $reponseorder=$bdd->query($request);
         while($datareponse=$reponseorder->fetch()){
