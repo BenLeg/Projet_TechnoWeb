@@ -72,4 +72,3 @@
             }
         }
  ?>  
-<a href="search_p.php">Retour vers la boutique</a>     
