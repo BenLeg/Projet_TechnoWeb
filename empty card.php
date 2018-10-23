@@ -6,9 +6,8 @@
 <head>
     <link rel="stylesheet" href="style.css" />
     <title>Capsules.com</title>
-    <b><font size="+3">Votre Panier:</font><b>
 </head>  
-
+<h1>Votre Panier:</h1>
 <?php
         $UsID=$_SESSION['id'];/*$_GET['user'];*/
         $request="SELECT * FROM orders WHERE `type`='CART' AND user_id='" . $UsID . "'";
@@ -37,6 +36,11 @@
                 $quantity=$order_product['quantity'];
                 $product_id=$order_product['product_id'];
                 $prix_prod=$order_product['unit_price'];
+                $request_name_product="SELECT name FROM products WHERE id =$product_id";
+                $reponse_request_name_product=$bdd->query($request_name_product);
+                $rep_name= $reponse_request_name_product->fetch();
+                $name_product=$rep_name['name'];
+                $reponse_request_name_product->closeCursor();
                 ?>
                 <body>
                 <a href="product_descri.php?id=<?php echo $product_id; ?>">
@@ -50,17 +54,17 @@
                         <table>
                             <thead><tr>
                                 <th>
-                                    id produit: <?php echo $product_id ?>
+                                    <?php echo $name_product ?>
                                 </th>
                             </tr></thead>
                             <tbody><tr>
                                 <td>
-                                    prix: <?php echo $prix_prod?>
+                                    Prix: <?php echo $prix_prod?>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    nb de produits: <?php echo $quantity ?>
+                                    Quantité: <?php echo $quantity ?>
                                 </td>
                             </tr></tbody>
                         </table>    
@@ -70,5 +74,6 @@
                 </body>
             <?php
             }
+            $reponse_request_order_product->closeCursor();
         }
  ?>  

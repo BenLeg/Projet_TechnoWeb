@@ -244,6 +244,7 @@ aside p{
     text-decoration:none;
 
 }
+
 #cadre_princ .keep_shopping, .check_cart
 {
     width:100%;
@@ -323,3 +324,7 @@ aside p{
     width:80%;
     font-size: large;
 }
+#monpanier th{
+    border-bottom: 1px outset black;
+}
+
