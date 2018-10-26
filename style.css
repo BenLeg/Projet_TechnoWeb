@@ -344,3 +344,6 @@ aside p{
 }
 
 
+.lien_panier:hover{
+    color: grey;
+}
