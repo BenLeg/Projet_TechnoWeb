@@ -42,9 +42,9 @@ header {
     margin-bottom: 15px;
 }
 
-.elem2:hover, .elem3:hover{ text-shadow: 1px 2px 2px grey;}
+.elem1:hover, .elem3:hover, .element1 { text-shadow: 1px 2px 2px grey;}
 
-.element2 { padding-left: 60px; }
+
 
 #conteneur1 input[type=submit], #conteneur2 input[type=text], #conteneur1 input[type=text],  #conteneur1 input[type=password]{
     border-radius: 5px;
