@@ -18,7 +18,13 @@
 
     if(empty($id))
     {
-        echo "panier vide";
+      ?>
+        <br>
+        <h4>Votre panier ne contient aucun article.</h4>
+        <h4>Si vous souhaitez ajouter des articles à votre panier, vous pouvez poursuivre en cliquant sur ce lien: "<a class="lien_panier" href="liste_produits.php"><u>Page d'Acceuil</u></a>".</h4>
+
+      <?php
+
     }
     else
     {
