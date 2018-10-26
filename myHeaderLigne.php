@@ -90,7 +90,7 @@
 
 <div id="conteneur2">
     
-    <div class="elem1"> <a id="produits" href="search_p.php">LesProduits</a> </div>
+    <div class="elem1"> <a id="produits" href="liste_produits.php">LesProduits</a> </div>
     <div class="elem2"><input type="text" href="search_l.php" value='Search'></div>	
 <?php 
 	if ($co==true){
