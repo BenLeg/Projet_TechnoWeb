@@ -91,8 +91,14 @@
 <div id="conteneur2">
     
     <div class="elem1"> <a id="produits" href="search_p.php">LesProduits</a> </div>
+    <div class="elem2"><input type="text" href="search.php" value='Search'></div>
+    <?php 
+	if ($co==true){
+		echo '
     <div class="elem3"> <a id="panier" href="empty card.php">MonPanier</a> </div>
-
+		';
+	}
+?>
 </div>
 	
 
