@@ -161,7 +161,7 @@
                         <?php echo $quantity ?>
                         <h> Article(s) Ajouté(s) au panier <br></h>
                     </div>
-                    <a href="search_p.php">
+                    <a href="liste_produits.php">
                         <div class="keep_shopping">
                             <h>Keep Shopping</h>
                         </div>
