@@ -90,19 +90,6 @@ a{
     text-decoration: none;
 }
 
-aside
-{
-    margin-left: 25px;
-    position: fixed;
-    top: 300px;
-}
-aside h1{
-    font-size: x-large;
-    border-bottom: 2px solid grey;
-}
-aside p{
-    font-size: large;
-}
 
 /* Design de la page descriptif produit*/
 #conteneur

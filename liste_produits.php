@@ -10,14 +10,6 @@
 
 
     <body>
-        <aside>
-            <div id="conteneur_aside">
-                <div class ="element">
-                    <h1>Filtres</h1>
-                    <p>Blablabla<br>Blabla<br>BlablablaBla</p>
-                </div>
-            </div>
-        </aside>
 
 		<section>
             <h1>PRODUITS</h1>
