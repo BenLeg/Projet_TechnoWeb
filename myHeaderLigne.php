@@ -81,8 +81,8 @@
 	    	<input type="submit" value="Me déconnecter" />
 		</form>
 		';
-	}
-?>
+	
+}?>
 
 	</div>
 
