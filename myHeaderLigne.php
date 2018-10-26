@@ -8,7 +8,7 @@
 	$co=false;
 
 	session_start ();
-	
+			
 	if (isset($_POST['deco']) ){
     		session_unset ();
 			session_destroy ();
