@@ -70,7 +70,6 @@
 			</br>
 			Password : <input type="password" name="mdp"/> 
 			</form>
-
 		' ;
 	}
 		
