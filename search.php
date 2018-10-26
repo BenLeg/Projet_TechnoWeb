@@ -31,7 +31,7 @@ $recherche = $_GET['search'];
                     $traitement_en_cours=false;
                     break;
                 }
-                if( strcasecmp($donnees['name'], $recherche)){
+                if( strcasecmp($donnees['name'], $recherche) == 0){
                 	?>
 				
                     <div class="element">
