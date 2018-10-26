@@ -55,7 +55,7 @@
                         <a href="product_descri.php?id=<?php echo $product_id; ?>">
                             <div class="image_produit">
                             <?php
-                                 echo '<img src="Images/'.$product_id.'"width="100%">';
+                                 echo '<img src="Images/'.$product_id.'"png width="100%">';
                             ?>
                             </div>
                             <div class="info_produit">
