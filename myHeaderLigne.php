@@ -8,7 +8,15 @@
 	$co=false;
 
 	session_start ();
-			
+
+	$adresse = "http://".$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"];
+
+	
+	if (isset($_POST['stop']) ){
+			echo "SALUT";
+#	   		echo 'vous venez de vous déconnecter';  
+    }
+
 	if (isset($_POST['deco']) ){
     		session_unset ();
 			session_destroy ();
@@ -76,7 +84,7 @@
 		
 	else {
 		echo '
-		<form id="deconnexion" method="post">
+		<form id="deconnexion" method="post"> 
 		    <div id="hide"> <input type="text" name="deco" value="decon"/> </div>
 	    	<input type="submit" value="Me déconnecter" />
 		</form>
