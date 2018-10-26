@@ -88,17 +88,12 @@
 </div>
 
 
-		<form id="recherche" action="search.php" method="get">    <input type="text" name="search" value="marecherche"/> </div> 	</form>
-
-
-
 <div id="conteneur2">
     
     <div class="elem1"> <a id="produits" href="liste_produits.php">LesProduits</a> </div>
-    <div class="elem2"> <a id="produits" href="search.php"> <input type="submit" href="search.php" value='Search'> </a> </div>	
-<?php 	if ($co==true) {		echo '  <div class="elem3"> <a id="panier" href="empty card.php">MonPanier</a> </div> '		;	}?>
-<?php 	if ($co==false){		echo '  <a id="produits" href="inscription.php">Inscription</a> 	'		;		}?>
-    
+	<div class="elem2"> <form id="recherche" action="search.php" method="get">  <input type="text" name="search" value="marecherche"/> </form> </div> 
+<?php 	if ($co==true) {		echo '  <div class="elem3"> <a id="panier" href="empty card.php">MonPanier</a> 		</div> '		;		}?>
+<?php 	if ($co==false){		echo '  <div class="elem3"> <a id="produits" href="inscription.php">Inscription</a> </div> 	'		;		}?>
 
 </div>
 	
