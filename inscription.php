@@ -33,7 +33,7 @@ die('Erreur: '.$e->getMessage());
 	  			<input class="login-input" type="password" name="confirm-password" placeholder="Confirmer mot de passe" required>
 	  			<br><br>
 	  			<input class="submit-input" type="submit" name="validation" value="Valider">
-	  			<a class="lien" href="search_p.php">Connexion</a>
+	  			<a class="lien" href="liste_produit.php">Connexion</a>
 	  			<img src = "images/logo.png" id="logo">
 	  			<br>
 			</form>
