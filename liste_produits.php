@@ -42,7 +42,7 @@
                             <figure>
                                 <?php 
                                     $image=$donnees['id'];
-                                    echo '<img src="Images/'.$image.'" width="100%">';
+                                    echo '<img src="Images/'.$image.'"png width="100%">';
                                 ?>
                                 <table>
                                     <thead><tr>
