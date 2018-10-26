@@ -87,8 +87,10 @@
 
 </div>
 
-<form id="deconnexion" method="get">  <div id="hide"> <input type="text" name="deco" value="decon"/> </div>   <input type="submit" value="Me déconnecter" />
-		</form>
+
+		<form id="recherche" action="search.php" method="get">    <input type="text" name="search" value="marecherche"/> </div> 	</form>
+
+
 
 <div id="conteneur2">
     
