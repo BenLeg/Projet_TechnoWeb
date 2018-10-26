@@ -91,7 +91,17 @@
 <div id="conteneur2">
     
     <div class="elem1"> <a id="produits" href="search_p.php">LesProduits</a> </div>
-    <div class="elem3"> <a id="panier" href="empty card.php">MonPanier</a> </div>
+    <div class="elem2"><input type="text" href="search_l.php" value='Search'></div>	
+<?php 
+	if ($co==true){
+		echo '  <div class="elem3"> <a id="panier" href="empty card.php">MonPanier</a> </div> ';
+	}
+?><?php 
+	if ($co==false){
+		echo ' <a id="produits" href="inscription.php">Inscription</a> 	';
+	}
+?>
+    
 
 </div>
 	
