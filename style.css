@@ -334,3 +334,40 @@ a{
 .lien_panier:hover{
     color: grey;
 }
+
+.payer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:35%;
+    font-size: x-large;
+    border:2px outset black;
+    border-radius: 10px;
+    background-color:rgba(0,0,0,0.05);
+    position: fixed;
+    right: 0;
+    margin-right: 10%;
+    top:50%;
+}
+.payer input
+{
+    margin:5%;
+    cursor:pointer;
+    font-size: x-large;
+    background-color:white;
+    border:2px outset black;
+    border-radius: 10px;
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 30%;
+    
+
+}
+.payer input:hover
+{
+    box-shadow: 1px 2px 2px grey;
+}
+

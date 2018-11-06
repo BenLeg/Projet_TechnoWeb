@@ -84,7 +84,8 @@
             }
         $reponse_request_order_product->closeCursor();
     }
- ?>  
+ ?>
+
 <?php 
 if(empty($id))
 {
@@ -94,21 +95,25 @@ else
 {
 ?>
     <div class="payer">
-    <?php 
-    if(isset( $_POST['commande']) )  {
+        <div id="recap_commande">
+            <h1>Total : <?php echo $amount['amount'] ?> </h1>
+        </div>
+        <?php 
+        if(isset( $_POST['commande']) )  
+        {
+            $bdd->exec("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id=$UsID");
+            $bdd->exec("UPDATE orders set `status` = 'BILLED' where `status` = 'CART' AND user_id=$UsID");
+        }
+        ?>
+        <form id="commander" method="post">
 
-    $bdd->exec("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id=$UsID");
-    $bdd->exec("UPDATE orders set `status` = 'BILLED' where `status` = 'CART' AND user_id=$UsID");
-    
-        
-    }
-    ?>
-        <form id="comander" method="post">
-            <div id="hide"> <input type="text" name="commande" value="go"/> </div>
-            <input type="submit" value="Commander" />
+                <input type="hidden" name="commande" value="go"/>
+                <input type="submit" value="Commander" />
+
+             
         </form>
-<div/>
 <?php 
 }
 ?>
+
 
