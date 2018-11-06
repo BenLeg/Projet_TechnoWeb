@@ -107,22 +107,10 @@ else
         ?>
         <form id="commander" method="post">
 
-<<<<<<< HEAD
                 <input type="hidden" name="commande" value="go"/>
                 <input type="submit" value="Commander" />
 
              
-=======
-    $bdd->exec("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id=$UsID");
-    $bdd->exec("UPDATE orders set `status` = 'BILLED' where `status` = 'CART' AND user_id=$UsID");
-        
-        
-    }
-    ?>
-        <form id="comander" method="post">
-            <div id="hide"> <input type="text" name="commande" value="go"/> </div>
-            <input type="submit" value="Commander" />
->>>>>>> a2c7e723498cf028271497d3db6aa7c04f070457
         </form>
 <?php 
 }
