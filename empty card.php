@@ -96,7 +96,7 @@ else
 ?>
     <div class="payer">
         <div id="recap_commande">
-            <h1>Total : <?php echo $amount['amount'] ?> </h1>
+            <h1>Total : <?php echo $amount['amount'] ?> €</h1>
         </div>
         <?php 
         if(isset( $_POST['commande']) )  
