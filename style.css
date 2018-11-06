@@ -191,9 +191,9 @@ a{
     background-color:rgba(0,0,0,0.05);
     box-shadow: 2.5px 2.5px 2.5px #aaa;
     border: none;
-    margin: 10px;
-    width:30%;
-    height: 45%;
+    margin: 20px;
+    width:20%;
+    height: 40%;
     text-align: center;
 }
 #conteneur_principal .element:hover{
@@ -208,7 +208,7 @@ a{
     font-size: x-large;
     text-align: center;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 10%;
 }
 
 /*Design de la page ajout_panier*/
