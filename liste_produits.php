@@ -6,9 +6,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 
-<?php include 'myHeaderLigne.php'?> 
-
-
+<?php include 'myHeaderLigne.php'?>
     <body>
 
 		<section>
