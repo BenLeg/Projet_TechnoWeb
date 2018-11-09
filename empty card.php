@@ -5,12 +5,16 @@
 <?php include 'myHeaderLigne.php'?>
 <head>
     <link rel="stylesheet" href="style.css" />
-    <title>Capsules.com</title>
+    <title>MonPeace.com</title>
 </head>  
-<h1>Votre Panier:</h1>
+
+    <section>
+    <h1>Votre Panier:</h1>
+
+</br>
 <?php
 
-    $UsID=$_SESSION['id'];/*$_GET['user'];*/
+    $UsID=$_SESSION['id'];  /*$_GET['user'];*/
 
     if(isset( $_POST['commande']) )  
     {
@@ -177,7 +181,6 @@
                             </div>
                         </a>
                     </div>
-                </body>
             <?php
             }
         $reponse_request_order_product->closeCursor();
@@ -186,11 +189,9 @@
 
 <?php 
 if(empty($id))
-{
- 
-}
-else
-{
+{}
+
+else {
 ?>
     <div class="payer">
         <div id="recap_commande">
@@ -206,4 +207,6 @@ else
 }
 ?>
 
-
+                </body>
+        </section>
+</html>

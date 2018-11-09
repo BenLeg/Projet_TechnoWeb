@@ -62,9 +62,9 @@
 
 <div id="conteneur1">
 
-	<div class="element3">	<img src="images/macaps.png" width="50px">	</div>
+	<div class="element3">	<img src="images/peacelove.png" width="50px">	</div>
 
-	<div class="element1">  Ma Capsule </div>
+	<div class="element1"> <a href="accueil.php"> Mon Peace </a> </div>
 
 	<div class="element2" >
 
@@ -98,7 +98,7 @@
 <div id="conteneur2">
     
     <div class="elem1"> <a id="produits" href="liste_produits.php">LesProduits</a> </div>
-	<div class="elem2"> <form id="recherche" action="search.php" method="get">  <input type="text" name="search" placeholder="marecherche"/> </form> </div> 
+	<div class="elem2"> <form id="recherche" action="search.php" method="get">  <input type="text" name="search" placeholder="Votre recherche"/> </form> </div> 
 <?php 	if ($co==true) {		echo '  <div class="elem3"> <a id="panier" href="empty card.php">MonPanier</a> 		</div> '		;		}?>
 <?php 	if ($co==false){		echo '  <div class="elem3"> <a id="produits" href="inscription.php">Inscription</a> </div> 	'		;		}?>
 

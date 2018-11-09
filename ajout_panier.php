@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Capsules.com</title>
+		<title>MonPeace.com</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 
@@ -19,7 +19,7 @@
                 ?>
                 <div class="pasco">
                     <h>Avant d'ajouter vos articles dans votre panier :</h>
-                    <a href="product_descri.php?id=<?php echo $_GET['id']; ?>">
+                    <a href="accueil.php">
                         <div id="log">
                             <h>Déjà client ?</h>
                             <p>Identifiez-vous</p>

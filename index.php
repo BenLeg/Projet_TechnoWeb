@@ -1,5 +1,4 @@
-
-<?php include 'liste_produits.php'?>
+<?php include 'accueil.php'?>
 
 <!-- 
 

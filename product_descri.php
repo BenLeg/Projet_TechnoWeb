@@ -1,8 +1,26 @@
+<?php  
+
+    for ($i = 1; $i <= 5; $i++) {
+        echo "produitRecent".$i;
+        echo "</br>";
+        if(!isset($cookie["produitRecent".$i])){
+            setcookie("produitRecent".$i, $_GET['id'], time() + 7*24*3600, null, null, false, true);
+            echo "save".$_GET['id'];
+            echo "</br>";
+            break;
+        }
+    // setcookie('produit1', $_GET['id'], time() + 365*24*3600, null, null, false, true);
+    }
+
+            
+?>
+
+
 <!DOCTYPE html>
 
 <html>
 	<head>
-		<title>Capsules.com</title>
+		<title>MonPeace.com</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 
