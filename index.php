@@ -1,4 +1,4 @@
-<?php include 'acccueil.php'?>
+<?php include 'accueil.php'?>
 
 <!-- 
 
