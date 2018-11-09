@@ -1,17 +1,22 @@
 <?php  
 
     for ($i = 1; $i <= 5; $i++) {
-        echo "produitRecent".$i;
+        $pr = 'produitRecent'.$i;
+        echo  $pr ;
         echo "</br>";
-        if(!isset($cookie["produitRecent".$i])){
-            setcookie("produitRecent".$i, $_GET['id'], time() + 7*24*3600, null, null, false, true);
-            echo "save".$_GET['id'];
+        echo "</br>";
+        if(!isset($_COOKIE[$pr])){
+            setcookie($pr, $_GET['id'], time() + 7*24*3600, null, null, false, true);
             echo "</br>";
-            break;
+            echo '$pr'.$_GET['id'];
+            echo "</br>";
         }
     // setcookie('produit1', $_GET['id'], time() + 365*24*3600, null, null, false, true);
     }
 
+    echo "</br>";
+    if(isset($_COOKIE['produitRecent'.$i])){echo $_COOKIE['produitRecent'.$i];}
+    echo $_COOKIE[$pr];
             
 ?>
 
