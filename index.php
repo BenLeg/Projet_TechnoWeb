@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 <?php include 'acccueil.php'?>
 
 <!-- 
