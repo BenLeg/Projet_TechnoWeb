@@ -5,11 +5,13 @@
 <?php include 'myHeaderLigne.php'?>
 <head>
     <link rel="stylesheet" href="style.css" />
-    <title>Capsules.com</title>
+    <title>MonPeace.com</title>
 </head>  
 
     <section>
     <h1>Votre Panier:</h1>
+
+</br>
 <?php
 
     $UsID=$_SESSION['id'];  /*$_GET['user'];*/

@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Capsules.com</title>
+		<title>MonPeace.com</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 
@@ -51,5 +51,6 @@
             ?>
             </div>
     	</section>
+        
     </body>
 </html>

@@ -64,7 +64,7 @@
 
 	<div class="element3">	<img src="images/macaps.png" width="50px">	</div>
 
-	<div class="element1">  Ma Capsule </div>
+	<div class="element1">  Mon Peace </div>
 
 	<div class="element2" >
 
