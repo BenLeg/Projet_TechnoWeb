@@ -62,9 +62,5 @@ $recherche = $_GET['search'];
 
 
 
-CC SAM, tu peux afficher les produits stp j'ai la flemme
-
-
-
     </body>
 </html>
