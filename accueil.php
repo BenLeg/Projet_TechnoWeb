@@ -9,11 +9,11 @@
 <?php include 'myHeaderLigne.php'?>
     <body> 
 
-    <section> <section>
+    <center>
    </br>   </br>
         <h1>  BIENVENUE SUR MONPEACE.COM </h1>
-
-    </section> </section>
-
+    </br>   </br>
+    <img src="images/peacelove.png">   
+</center>
     </body>
     </html>

@@ -98,7 +98,7 @@
 <div id="conteneur2">
     
     <div class="elem1"> <a id="produits" href="liste_produits.php">LesProduits</a> </div>
-	<div class="elem2"> <form id="recherche" action="search.php" method="get">  <input type="text" name="search" placeholder="marecherche"/> </form> </div> 
+	<div class="elem2"> <form id="recherche" action="search.php" method="get">  <input type="text" name="search" placeholder="Votre recherche"/> </form> </div> 
 <?php 	if ($co==true) {		echo '  <div class="elem3"> <a id="panier" href="empty card.php">MonPanier</a> 		</div> '		;		}?>
 <?php 	if ($co==false){		echo '  <div class="elem3"> <a id="produits" href="inscription.php">Inscription</a> </div> 	'		;		}?>
 
