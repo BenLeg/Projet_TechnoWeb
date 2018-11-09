@@ -12,11 +12,17 @@
 
     $UsID=$_SESSION['id'];/*$_GET['user'];*/
 
-        if(isset( $_POST['commande']) )  
-        {
-            $bdd->exec("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id=$UsID");
-            $bdd->exec("UPDATE orders set `status` = 'BILLED' where `status` = 'CART' AND user_id=$UsID");
-        }
+    if(isset( $_POST['commande']) )  
+    {
+        $req=$bdd->prepare("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id= :user");
+        $req->execute(array(
+            'user'=>$UsID
+        ));
+        $req=$bdd->prepare("UPDATE orders set `status` = 'BILLED' where `status` = 'CART' AND :user=$UsID");
+        $req->execute(array(
+            'user'=>$UsID
+        ));
+    }
 
     $request="SELECT * FROM orders WHERE `type`='CART' AND user_id='" . $UsID . "'";
     $reponseorder=$bdd->query($request);
@@ -24,8 +30,68 @@
         $id=$datareponse['id'];
     }
 
+    if(isset( $_POST['plus']) )  
+        {
+            $product_id_modif=$_POST['plus'];
+            echo $product_id_modif;
+            $req=$bdd->prepare("SELECT * FROM `order_products` WHERE order_id = $id and product_id= :product");
+            $req->execute(array(
+                'product'=>$product_id_modif
+            ));
+            while($reponse=$req->fetch()){
+                $quantity=$reponse['quantity'];
+            }
+            $req->closeCursor();
+            echo $quantity;
+            $new_qtt=$quantity+1;
+            $req=$bdd->prepare("UPDATE order_products SET quantity=:qtt WHERE product_id=:product_id_modif AND order_id=:id");
+            $req->execute(array(
+                'qtt'=>$new_qtt,
+                'product_id_modif'=>$product_id_modif,
+                'id'=>$id
+            ));
+        }
 
-        
+    if(isset( $_POST['moins']) )  
+        {
+            $product_id_modif=$_POST['moins'];
+            echo $product_id_modif;
+            $req=$bdd->prepare("SELECT * FROM `order_products` WHERE order_id = $id and product_id= :product");
+            $req->execute(array(
+                'product'=>$product_id_modif
+            ));
+            while($reponse=$req->fetch()){
+                $quantity=$reponse['quantity'];
+            }
+            $req->closeCursor();
+            echo $quantity;
+            $new_qtt=$quantity-1;
+            $req=$bdd->prepare("UPDATE order_products SET quantity=:qtt WHERE product_id=:product_id_modif AND order_id=:id");
+            $req->execute(array(
+                'qtt'=>$new_qtt,
+                'product_id_modif'=>$product_id_modif,
+                'id'=>$id
+            ));
+            if($new_qtt==0)
+            {
+                $req=$bdd->prepare("DELETE from order_products WHERE product_id=:product_id_modif AND order_id=:id");
+                $req->execute(array(
+                    'product_id_modif'=>$product_id_modif,
+                    'id'=>$id
+                ));
+            }
+        }
+    if(isset( $_POST['supprimer']) )
+    {
+        $product_id_modif=$_POST['supprimer'];
+        $req=$bdd->prepare("DELETE from order_products WHERE product_id=:product_id_modif AND order_id=:id");
+        $req->execute(array(
+            'product_id_modif'=>$product_id_modif,
+            'id'=>$id
+        ));
+    }
+
+
     if(empty($id))
     {
       ?>
@@ -82,7 +148,29 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            Quantité: <?php echo $quantity ?>
+                                            Quantité: <?php echo $quantity ?>                                   
+
+                                                    <form id="plus" method="post">
+
+                                                        <input type="hidden" name="plus" value="<?php echo $product_id ?>"/>
+                                                        <input type="submit" value="+" />  
+
+                                                    </form>
+                                                
+                                                    <form id="moins" method="post">
+
+                                                        <input type="hidden" name="moins" value="<?php echo $product_id ?>"/>
+                                                        <input type="submit" value="-" />  
+
+                                                    </form>
+
+                                                    <form id="supprimer" method="post">
+
+                                                        <input type="hidden" name="supprimer" value="<?php echo $product_id ?>"/>
+                                                        <input type="submit" value="x" />  
+
+                                                    </form>
+
                                         </td>
                                     </tr></tbody>
                                 </table>    
