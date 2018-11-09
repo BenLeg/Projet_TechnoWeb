@@ -73,6 +73,18 @@
                                     <tr>
                                         <td>
                                             Quantité: <?php echo $quantity ?>
+                                                            <?php 
+                                                    if(isset( $_POST['+']) )  
+                                                            {
+                                                            $bdd->exec("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id=$UsID");
+                                                            }
+                                                            ?>
+                                                    <form id="+" method="post">
+
+                                                        <input type="hidden" name="+" value="go"/>
+                                                        <input type="submit" value="+" />  
+
+                                                    </form>
                                         </td>
                                     </tr></tbody>
                                 </table>    
