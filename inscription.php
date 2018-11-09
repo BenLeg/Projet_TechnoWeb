@@ -56,7 +56,7 @@ die('Erreur: '.$e->getMessage());
 
 				if($data == null){
 					$bdd->exec('INSERT INTO users(username,email,password) VALUES(\''.$username.'\',\''.$mail.'\',\''.$password.'\')');
-					header('Location: search_p.php');
+					header('Location: liste_produits.php');
   					exit();
 				}
 				else{  echo "L'username existe deja"; }
