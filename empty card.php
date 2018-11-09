@@ -9,13 +9,23 @@
 </head>  
 <h1>Votre Panier:</h1>
 <?php
+
     $UsID=$_SESSION['id'];/*$_GET['user'];*/
+
+        if(isset( $_POST['commande']) )  
+        {
+            $bdd->exec("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id=$UsID");
+            $bdd->exec("UPDATE orders set `status` = 'BILLED' where `status` = 'CART' AND user_id=$UsID");
+        }
+
     $request="SELECT * FROM orders WHERE `type`='CART' AND user_id='" . $UsID . "'";
     $reponseorder=$bdd->query($request);
     while($datareponse=$reponseorder->fetch()){
         $id=$datareponse['id'];
     }
 
+
+        
     if(empty($id))
     {
       ?>
@@ -98,18 +108,10 @@ else
         <div id="recap_commande">
             <h1>Total : <?php echo $amount['amount'] ?> €</h1>
         </div>
-        <?php 
-        if(isset( $_POST['commande']) )  
-        {
-            $bdd->exec("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id=$UsID");
-            $bdd->exec("UPDATE orders set `status` = 'BILLED' where `status` = 'CART' AND user_id=$UsID");
-        }
-        ?>
         <form id="commander" method="post">
 
                 <input type="hidden" name="commande" value="go"/>
                 <input type="submit" value="Commander" />
-
              
         </form>
 <?php 
