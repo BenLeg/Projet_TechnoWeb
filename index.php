@@ -40,6 +40,3 @@
 
 // add view display possibly using data from database
 // TODO insert the end html envelope (</body></html>) -->
-=======
-<?php include 'liste_produits.php'?>
->>>>>>> 7e2807b3eb8f1c976d6be1b75b6322bf85d86dc0
