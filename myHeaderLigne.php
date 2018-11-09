@@ -62,9 +62,9 @@
 
 <div id="conteneur1">
 
-	<div class="element3">	<img src="images/peace.png" width="50px">	</div>
+	<div class="element3">	<img src="images/peacelove.png" width="50px">	</div>
 
-	<div class="element1">  Mon Peace </div>
+	<div class="element1"> <a href="accueil.php"> Mon Peace </a> </div>
 
 	<div class="element2" >
 

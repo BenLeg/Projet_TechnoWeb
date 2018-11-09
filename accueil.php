@@ -9,11 +9,13 @@
 <?php include 'myHeaderLigne.php'?>
     <body> 
 
-    <section>
-    	
-<h1>  Bienvenue sur votre site de vente de Peace's. </h1>
- Vous pouvez vous connecter ou commencer à rechercher un produit.
-    </section>
+    <section> <section>
+   </br>   </br>
+        <h1>  BIENVENUE SUR MONPEACE.COM </h1>
+        </br>
+         Vous pouvez vous connecter ou commencer à rechercher un produit.
+
+    </section> </section>
 
     </body>
     </html>
