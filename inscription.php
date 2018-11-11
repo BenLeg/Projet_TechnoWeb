@@ -43,11 +43,26 @@ die('Erreur: '.$e->getMessage());
 	  			<br>
 	  			<input class="login-input" type="text" name="city" placeholder="Ville" required>
 	  			<br>
-	  			<input class="login-input" type="text" name="country" placeholder="Pays" required>
+	  			<select class="login-input" name="country" id="country">
+	  				<optgroup label="Europe">
+           				<option for="country" value="FRANCE">France</option>
+           				<option for="country" value="ESPAGNE">Espagne</option>
+          				<option for="country" value="ITALIE">Italie</option>
+           				<option for="country" value="ROYAUME-UNI">Royaume-Uni</option>
+           			</optgroup>
+           			<optgroup label="Amérique du Nord">
+           				<option for="country" value="CANADA">Canada</option>
+           				<option for="country" value="ETATS-UNIS">États-Unis</option>
+           			</optgroup>
+           			<optgroup label="Asie">
+           				<option for="country" value="CHINE">Chine</option>
+           				<option for="country" value="JAPON">Japon</option>
+           			</optgroup>
+       			</select>
 	  			<br><br>
 	  			<input class="submit-input" type="submit" name="validation" value="Valider">
 	  			<a class="lien" href="accueil.php">Connexion</a>
-	  			<img src = "images/logo.png" id="logo">
+	  			<img src = "images/peacelove.png" id="logo">
 	  			<br>
 			</form>
 		</div>
@@ -71,29 +86,34 @@ die('Erreur: '.$e->getMessage());
 				$reponse->closeCursor();
 
 				if(empty($data_username) OR empty($data_mail)){
-					$requete = $bdd->prepare("INSERT INTO user_address(human_name,address_one,address_two,postal_code,city,country) VALUES (:human_name,:address_one,:address_two,:postal_code,:city,:country)");
+					$requete = $bdd->prepare("INSERT INTO user_addresses(human_name,address_one,address_two,postal_code,city,country) VALUES (:human_name,:address_one,:address_two,:postal_code,:city,:country)");
 					$requete->execute(array(
 						'human_name' => $_POST['human_name'],
-						'address_one' => $_POST['numero_rue'].' '.$_POST['rue'],
+						'address_one' => $_POST['numero_rue'].' rue '.$_POST['rue'],
 						'address_two' => $_POST['address_two'],
 						'postal_code' => $_POST['postal_code'],
 						'city' => $_POST['city'],
-						'country' => strtoupper($POST['country'])
+						'country' => $_POST['country']
 					));
 
-					$reponse = $bdd->prepare("SELECT id FROM user_address");
-					$data_id = $reponse->fetch();
+					$reponse = $bdd->prepare("SELECT * FROM user_addresses WHERE human_name = :human_name AND address_one = :address_one AND address_two = :address_two");
+					$reponse->execute(array(
+						'human_name' => $_POST['human_name'],
+						'address_one' => $_POST['numero_rue'].' rue '.$_POST['rue'],
+						'address_two' => $_POST['address_two']
+					));
+					$data = $reponse->fetch();
+					$data_id = $data['id'];
 					$reponse->closeCursor();
 
-					$requete = $bdd->prepare("INSERT INTO users(username,email,password,billing_address_id,delivery_address_id) VALUES (:username,:email,:password,:billing_address_id,:delivery_address_id)");
+					$requete = $bdd->prepare("INSERT INTO users(username,email,password,billing_adress_id,delivery_adress_id) VALUES (:username,:email,:password,:billing_adress_id,:delivery_adress_id)");
 					$requete->execute(array(
 						'username' => $_POST['username'],
 						'email' => $_POST['mail'],
 						'password' => $_POST['password'],
-						'billing_address_id' => $data_id,
-						'delivery_address_id' => $data_id
+						'billing_adress_id' => $data_id,
+						'delivery_adress_id' => $data_id
 					));
-
 					header('Location: accueil.php');
   					exit();
 				}
