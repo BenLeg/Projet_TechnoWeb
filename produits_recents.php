@@ -6,11 +6,24 @@
     <body> 
 <br><br>
 <section>
+
+        <?php 
+            $i =1;
+            $nom ='produitRecent'.$i;
+            if(isset($_COOKIE[$nom])){
+
+
+        ?>
+
             <h1>Retrouvez vos produits récemments consultés</h1>
             <br>
 
             <div id="conteneur_principal">
+
             <?php
+
+        }
+
             $reponse = $bdd->query('SELECT * FROM products');
 
             $traitement_en_cours=true;
@@ -60,9 +73,10 @@
             $reponse->closeCursor();
             ?>
             </div>
+
+    
+
         </section>
-
-
 
     </body>
     </html>
