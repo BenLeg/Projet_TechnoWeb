@@ -10,16 +10,16 @@
     <body> 
 
     <center>
-   </br>   </br>
+   </br>   
         <h1>  BIENVENUE SUR MONPEACE.COM </h1>
-    </br>   </br>
-    <img src="images/peacelove.png">   
+    </br>   
+    <img src="images/peacelove.png" width="200px">   
 </center>
-
+<br><br>
 <section>
-            <h1>Produits récemments consultés</h1>
-            <br><br>
-            
+            <h1>Retrouvez vos produits récemments consultés</h1>
+            <br>
+
             <div id="conteneur_principal">
             <?php
             $reponse = $bdd->query('SELECT * FROM products');
@@ -28,11 +28,24 @@
             while($traitement_en_cours)
             {             
                 $donnees = $reponse->fetch();
+                $faire = false;
+                for($i=1; $i<= 4; $i++){
+                    $nom ='produitRecent'.$i;
+                    if(isset($_COOKIE[$nom])){
+                        if($_COOKIE[$nom]==$donnees['id']){
+                            $faire = true;
+                            break;
+                        }
+                    }
+                }
+                
                 if($donnees==false)
                 {
                     $traitement_en_cours=false;
                     break;
                 }
+
+                if($faire == true){
                 ?>
                     <div class="element">
                         <a href="product_descri.php?id=<?php echo $donnees['id']; ?>">
@@ -52,7 +65,8 @@
                             </figure>
                         </a>
                     </div>
-            <?php                    
+            <?php     
+            }               
             }
             $reponse->closeCursor();
             ?>
