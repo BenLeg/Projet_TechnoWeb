@@ -48,7 +48,10 @@
 
         <?php
             $product_id = $_GET['id'];
-            $reponse = $bdd->query('SELECT * FROM products WHERE id=\'' . $product_id . '\'');
+            $reponse = $bdd->prepare('SELECT * FROM products WHERE id = :id');
+            $reponse->execute(array(
+                'id'=>$product_id
+            )); 
             $donnees = $reponse->fetch();
         ?>
         <section>
