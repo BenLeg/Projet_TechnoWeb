@@ -1,23 +1,61 @@
 <?php  
+    echo 'cest le produit';
+    echo $_GET['id'];
+    echo '</br>';
+    echo '</br>';
 
-    for ($i = 1; $i <= 5; $i++) {
-        $pr = 'produitRecent'.$i;
-        echo  $pr ;
-        echo "</br>";
-        echo "</br>";
-        if(!isset($_COOKIE[$pr])){
-            setcookie($pr, $_GET['id'], time() + 7*24*3600, null, null, false, true);
-            echo "</br>";
-            echo '$pr'.$_GET['id'];
+    $i = 5 ;
+    $nom ='produitRecent'.$i;
+    if(isset($_COOKIE[$nom])){    # si il y a deja 5 produits enregistrés
+        echo 'deja 5 produits enregistrés!!';
+        for($i = 1; $i <= 5; $i++){
+            $nom ='produitRecent'.$i;
+            echo $nom;
+            echo ' = ';
+            echo $_COOKIE[$nom];
             echo "</br>";
         }
-    // setcookie('produit1', $_GET['id'], time() + 365*24*3600, null, null, false, true);
+            echo "</br>";
+        for($j = 5; $j > 1; $j--){
+            $nom ='produitRecent'.$j;
+            $n = $j-1;
+            $val ='produitRecent'.$n;
+            $newval = $_COOKIE[$val];
+            setcookie($nom, $newval, time() + 7*24*3600, null, null, false, true);
+            echo $nom;
+            echo $_COOKIE[$nom];
+            echo "</br>";
+        }
+        $j = 1;
+        $nom ='produitRecent'.$j;
+        setcookie($nom, $_GET['id'], time() + 7*24*3600, null, null, false, true);
+        echo $nom;
+        echo $_COOKIE[$nom];
+         echo "</br>";
     }
 
-    echo "</br>";
-    if(isset($_COOKIE['produitRecent'.$i])){echo $_COOKIE['produitRecent'.$i];}
-    echo $_COOKIE[$pr];
-            
+    else { 
+        for ($i = 1; $i <= 5; $i++) {
+            $nom = 'MonproduitRecent'.$i;
+            echo  $nom ;
+            echo "</br>";
+            if(!isset($_COOKIE[$nom])){
+                setcookie($nom, $_GET['id'], time() + 7*24*3600, null, null, false, true);
+                echo "</br>";
+                echo "</br>";
+                $i=6;
+            }
+        }
+    }
+
+        $j = 1;
+        $nom ='produitRecent'.$j;
+echo $_COOKIE[$nom];
+         echo "</br>";
+
+    // setcookie('produit1', $_GET['id'], time() + 365*24*3600, null, null, false, true);
+    
+
 ?>
 
 
