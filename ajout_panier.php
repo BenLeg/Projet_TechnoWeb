@@ -178,3 +178,6 @@
         ?>  
     </body>
 </html>
+
+
+<?php include 'produits_recents.php'?>
