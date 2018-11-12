@@ -18,21 +18,16 @@
 
     if(isset( $_POST['commande']) )  
     {
-        $req=$bdd->prepare("UPDATE orders set type = ORDER where type = CART AND user_id= :user");
-        $req->execute(array(
-            'user'=>$UsID
-        ));
-        $req=$bdd->prepare("UPDATE orders set status = BILLED where status = :status AND user_id =:user");
-        $req->execute(array(
-        	'status'=>'CART',
-            'user'=>$UsID
-        ));
+        $bdd->exec("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id=$UsID");
+        $bdd->exec("UPDATE orders set `status` = 'BILLED' where `status` = 'CART' AND user_id=$UsID");
     }
+
     $request = $bdd->prepare('SELECT * FROM orders WHERE type = :type AND user_id =:us_id');
     $request->execute(array(
     	'type'=>'CART',
     	'us_id'=>$UsID
     ));
+
     while($datareponse=$request->fetch()){
         $id=$datareponse['id'];
     }
