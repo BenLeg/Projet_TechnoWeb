@@ -18,19 +18,22 @@
 
     if(isset( $_POST['commande']) )  
     {
-        $req=$bdd->prepare("UPDATE orders set type = 'ORDER' where type = 'CART' AND user_id= :user");
+        $req=$bdd->prepare("UPDATE orders set type = ORDER where type = CART AND user_id= :user");
         $req->execute(array(
             'user'=>$UsID
         ));
-        $req=$bdd->prepare("UPDATE orders set `status` = 'BILLED' where `status` = 'CART' AND :user=$UsID");
+        $req=$bdd->prepare("UPDATE orders set status = BILLED where status = :status AND user_id =:user");
         $req->execute(array(
+        	'status'=>'CART',
             'user'=>$UsID
         ));
     }
-
-    $request="SELECT * FROM orders WHERE `type`='CART' AND user_id='" . $UsID . "'";
-    $reponseorder=$bdd->query($request);
-    while($datareponse=$reponseorder->fetch()){
+    $request = $bdd->prepare('SELECT * FROM orders WHERE type = :type AND user_id =:us_id');
+    $request->execute(array(
+    	'type'=>'CART',
+    	'us_id'=>$UsID
+    ));
+    while($datareponse=$request->fetch()){
         $id=$datareponse['id'];
     }
 
@@ -181,9 +184,12 @@
 		));	
 		}
     }
-	$request="SELECT * FROM orders WHERE `type`='CART' AND user_id='" . $UsID . "'";
-    $reponseorder=$bdd->query($request);
-    while($datareponse=$reponseorder->fetch()){
+    $request=$bdd->prepare('SELECT * FROM orders WHERE type = :type AND user_id = :us_id');
+    $request->execute(array(
+    	'type'=>'CART',
+    	'us_id'=>$UsID
+    ));
+    while($datareponse=$request->fetch()){
         $id_verif=$datareponse['id'];
     }
 
@@ -198,27 +204,33 @@
     }
     else
     {
-        $request_amount="SELECT amount FROM `orders` WHERE id=$id";
-        $reponse_request_amount=$bdd->query($request_amount);
-        $amount=$reponse_request_amount->fetch();
+    	$request_amount=$bdd->prepare('SELECT amount FROM orders WHERE id=:id');
+    	$request_amount->execute(array(
+    		'id'=>$id
+    	));
+        $amount=$request_amount->fetch();
         $prix=$amount['amount'];
-        $reponse_request_amount->closeCursor();
-        echo "\n";
+        $request_amount->closeCursor();
 
-        $request_order_product="SELECT product_id,quantity,unit_price FROM `order_products` WHERE order_id = $id";
-        $reponse_request_order_product=$bdd->query($request_order_product);
+        $request_order_product=$bdd->prepare('SELECT product_id,quantity,unit_price FROM order_products WHERE order_id = :id');
+        $request_order_product->execute(array(
+        	'id'=>$id
+        ));
         ?>
             <?php
-            while($order_product = $reponse_request_order_product->fetch())
+            while($order_product = $request_order_product->fetch())
             {
                 $quantity=$order_product['quantity'];
                 $product_id=$order_product['product_id'];
                 $prix_prod=$order_product['unit_price'];
-                $request_name_product="SELECT name FROM products WHERE id =$product_id";
-                $reponse_request_name_product=$bdd->query($request_name_product);
-                $rep_name= $reponse_request_name_product->fetch();
+
+                $request_name_product=$bdd->prepare('SELECT name FROM products WHERE id = :prod_id');
+                $request_name_product->execute(array(
+                	'prod_id'=>$product_id
+                ));
+                $rep_name = $request_name_product->fetch();
                 $name_product=$rep_name['name'];
-                $reponse_request_name_product->closeCursor();
+                $request_name_product->closeCursor();
                 ?>
                 <body>
                     <div id="produit_panier">
@@ -285,7 +297,7 @@
 	                <input type="submit" value="Commander" />  
 		        </form>
 		    <?php
-        $reponse_request_order_product->closeCursor();
+        $request_order_product->closeCursor();
     }
  ?>
 </html>
