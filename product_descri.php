@@ -1,60 +1,35 @@
 <?php  
-    echo 'cest le produit';
-    echo $_GET['id'];
-    echo '</br>';
-    echo '</br>';
 
-    $i = 5 ;
-    $nom ='produitRecent'.$i;
-    if(isset($_COOKIE[$nom])){    # si il y a deja 5 produits enregistrés
-        echo 'deja 5 produits enregistrés!!';
-        for($i = 1; $i <= 5; $i++){
-            $nom ='produitRecent'.$i;
-            echo $nom;
-            echo ' = ';
-            echo $_COOKIE[$nom];
-            echo "</br>";
-        }
-            echo "</br>";
-        for($j = 5; $j > 1; $j--){
-            $nom ='produitRecent'.$j;
-            $n = $j-1;
-            $val ='produitRecent'.$n;
-            $newval = $_COOKIE[$val];
-            setcookie($nom, $newval, time() + 7*24*3600, null, null, false, true);
-            echo $nom;
-            echo $_COOKIE[$nom];
-            echo "</br>";
-        }
-        $j = 1;
-        $nom ='produitRecent'.$j;
-        setcookie($nom, $_GET['id'], time() + 7*24*3600, null, null, false, true);
-        echo $nom;
-        echo $_COOKIE[$nom];
-         echo "</br>";
-    }
+    $newId =  $_GET['id'];
+    $nbProd = 5;
+    $exist = 0;
 
-    else { 
-        for ($i = 1; $i <= 5; $i++) {
-            $nom = 'MonproduitRecent'.$i;
-            echo  $nom ;
-            echo "</br>";
-            if(!isset($_COOKIE[$nom])){
-                setcookie($nom, $_GET['id'], time() + 7*24*3600, null, null, false, true);
-                echo "</br>";
-                echo "</br>";
-                $i=6;
-            }
+    for($i = 1; $i <= 5; $i++){             # On regarde si le produit est déjà enregistré
+        $nom ='produitRecent'.$i;
+        if(isset($_COOKIE[$nom])){
+            if($newId == $_COOKIE[$nom]){   
+                $exist = $i; }
+        }
+        else{                               # Et on enregistre le nombre total de produits si il est différent de 5
+            $nbProd = $i-1;
+            break;  
         }
     }
 
-        $j = 1;
-        $nom ='produitRecent'.$j;
-echo $_COOKIE[$nom];
-         echo "</br>";
+    $fin = $nbProd+1;
 
-    // setcookie('produit1', $_GET['id'], time() + 365*24*3600, null, null, false, true);
-    
+    if( $exist == 0 ){ } 
+    else{       $fin = $exist;    }
+
+    for($j = $fin; $j > 1; $j--){   # decaler les produits du 1 au dernier / ou place du produit deja existant
+        $nom ='produitRecent'.$j;
+        $n = $j-1;
+        $val ='produitRecent'.$n;
+        $newval = $_COOKIE[$val];
+        setcookie($nom, $newval, time() + 7*24*3600, null, null, false, true);
+        }
+
+    setcookie('produitRecent1', $newId, time() + 7*24*3600, null, null, false, true);
 
 ?>
 
