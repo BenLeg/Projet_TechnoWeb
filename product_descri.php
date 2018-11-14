@@ -59,7 +59,7 @@
                 <div class="photo_produit">
                     <?php 
                         $image=$product_id;
-                        echo '<img src="Images/'.$image.'"width="100%">';
+                        echo '<img src="Images/'.$image.'"png width="100%">';
                     ?>
                 </div>
                 <div class="selected_product">
