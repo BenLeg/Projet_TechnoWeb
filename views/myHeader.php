@@ -42,7 +42,7 @@
 <div id="conteneur2">
     
     <div class="elem1"> <a id="produits" href="index.php?page=liste_produits">LesProduits</a> </div>
-	<div class="elem2"> <form id="recherche" action="index.php?page=search" method="get">  <input type="text" name="search" placeholder="Votre recherche"/> </form> </div> 
+	<div class="elem2"> <form id="recherche" action="index.php?page=panier" method="get">  <input type="text" name="search" placeholder="Votre recherche"/> </form> </div> 
 <?php 	if ($co==true) {		echo '  <div class="elem3"> <a id="panier" href="index.php?page=panier">MonPanier</a> 		</div> '		;		}?>
 <?php 	if ($co==false){		echo '  <div class="elem3"> <a id="produits" href="index.php?page=inscription">Inscription</a> </div> 	'		;		}?>
 

@@ -38,7 +38,7 @@
 		<?php 
 
 
-		if ($page != 'creerCompte'){		include('views/myHeader.php');		}
+		if ($page != 'inscription'){		include('views/myHeader.php');		}
 
 		?> 
 
