@@ -2,7 +2,7 @@
 
 
 <?php
-$recherche = $_GET['search'];
+$recherche = $_POST['recherche'];
 
 ?> 
 
@@ -14,7 +14,6 @@ $recherche = $_GET['search'];
             <div id="conteneur_principal">
             <?php
             $reponse = $bdd->query('SELECT * FROM products');
-            echo "SALUT"
             $traitement_en_cours=true;
             while($traitement_en_cours)
             {             
