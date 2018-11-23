@@ -28,7 +28,7 @@
 						'billing_adress_id' => $data_id,
 						'delivery_adress_id' => $data_id
 					));
-					header('Location: accueil.php');
+					header('Location: index.php?page=acceuil.php');
   					exit();
 
   					?>
