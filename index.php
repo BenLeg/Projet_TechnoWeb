@@ -1,40 +1,52 @@
-<?php include 'accueil.php'?>
+<?php 
 
-<!-- 
+	include 'database.php' ;
 
-//TODO start session
+		
 
-//TODO include database.php file
+	session_start ();
 
-//TODO assign database connexion into $database variable
-//TODO include checkUser.php file
+	$user_id = '';
+	$co=false;
+	$page='index'; 
+	
+	if (isset($_POST['stop']) ){			echo "SALUT";        }
 
-//TODO (in the next step) control user access
-//TODO get page parameter ($_GET['page'] or $_POST['page']) and assign it into $page variable
+	if (isset($_POST['deco']) ){
+    		session_unset ();
+			session_destroy ();
+    }
 
-//if 'action/'.$page'.php' exists then include it (use file_exists($filename) function)
+	if (isset($_SESSION['identifiant']) && isset($_SESSION['password'])) {		$co=true;		}
+
+	if(isset($_POST['identifiant']) AND isset($_POST['mdp'])  ){    include 'connexion.php';    }
+
+	if (isset($_GET['page'])){		$page=$_GET['page'];	} 
+
+	if (file_exists('actions/'.$page.'.php')){	include ('actions/'.$page.'.php');	}
+
+?>
+
+<html>
+	
+	<head>
+		<title>MonPeace.com</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
 
 
-//create one php file for each action to manage on the website
-
-//TODO use 
-//             input params (included in $_GET or $_POST)
-//             $database variable (initialized in $database.php) 
-// to insert or update data into database
-// TODO insert the start html envelope (<html><head>....</head><body>
-
-// TODO using $page decide to include header.php
-*/
+		<?php 
 
 
+		if ($page != 'creerCompte'){		include('views/myHeader.php');		}
+
+		?> 
 
 
-//create one php file for each view to manage on the website (don't forget to create on main.php view)
+		<?php 
+		if (file_exists('views/'.$page.'.php')){	include ('views/'.$page.'.php');	}
+		else {	include ('views/accueil.php');	}
 
-//TODO use 
-//             input params (included in $_GET or $_POST)
-//             $database variable (initialized in $database.php) 
-// to get data from database (if needed)
+		?> 
 
-// add view display possibly using data from database
-// TODO insert the end html envelope (</body></html>) -->
+</html>

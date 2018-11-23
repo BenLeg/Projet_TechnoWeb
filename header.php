@@ -1,6 +1,5 @@
 <?php
 	
-
 	try	{			$bdd = new PDO('mysql:host=localhost;dbname=capsules;charset=utf8', 'root', '');		}
 	catch (Exception $e)	{	        die('Erreur : ' . $e->getMessage());		}
 	
@@ -86,7 +85,7 @@
 		echo '
 		
 		<a href="accueil.php">  <form action="accueil.php" id="deconnexion" method="post"> 
-		    <div id="hide"> <input type="text" name="deco" value="decon"/> </div>
+		     <input type="hidden" type="text" name="deco" value="decon"/>
 	    	<input type="submit" value="Me déconnecter" /></form> </a>
 		';
 }?>

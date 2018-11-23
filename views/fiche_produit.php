@@ -1,16 +1,18 @@
+
 <?php  
+
 
     $newId =  $_GET['id'];
     $nbProd = 5;
     $exist = 0;
 
-    for($i = 1; $i <= 5; $i++){             # On regarde si le produit est déjà enregistré
+    for($i = 1; $i <= 5; $i++){            
         $nom ='produitRecent'.$i;
         if(isset($_COOKIE[$nom])){
             if($newId == $_COOKIE[$nom]){   
                 $exist = $i; }
         }
-        else{                               # Et on enregistre le nombre total de produits si il est différent de 5
+        else{                               
             $nbProd = $i-1;
             break;  
         }
@@ -21,7 +23,7 @@
     if( $exist == 0 ){ } 
     else{       $fin = $exist;    }
 
-    for($j = $fin; $j > 1; $j--){   # decaler les produits du 1 au dernier / ou place du produit deja existant
+    for($j = $fin; $j > 1; $j--){   
         $nom ='produitRecent'.$j;
         $n = $j-1;
         $val ='produitRecent'.$n;
@@ -35,14 +37,6 @@
 
 
 <!DOCTYPE html>
-
-<html>
-	<head>
-		<title>MonPeace.com</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-
-<?php include 'myHeaderLigne.php'?>  
 
     <body>
 
@@ -71,8 +65,9 @@
                             <td><?php echo $donnees['unit_price']; ?> €</td>
                         </tr></tbody>
                     </table>
-                    <form  action="ajout_panier.php?id=<?php echo $donnees['id']?>" ;  method="post">
+                    <form  action="index.php?page=ajout_panier&id=<?php echo $donnees['id']?>" ;  method="post">
                         <p1>Quantité : <input type="int" name="quantity" value="1" autofocus required /><br><br><br></p1>
+
                         <p2><input type="submit" value="Ajouter au Panier" /></p2>
                     </form>
                 </div>

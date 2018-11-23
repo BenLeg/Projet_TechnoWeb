@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<title>MonPeace.com</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-
-<?php include 'myHeaderLigne.php'?>
     <body> 
 
     <center>
