@@ -184,7 +184,6 @@ a{
     border-top: 2.5px groove black;
     padding: 50px;
 
-
  }
 #conteneur_principal .element
 {
@@ -193,16 +192,15 @@ a{
     border: none;
     margin: 20px;
     width:20%;
-    height: 40%;
     text-align: center;
 }
+
 #conteneur_principal .element:hover{
     border: 2px solid grey;
     cursor: pointer;
-
 }
 
-#conteneur_principal table
+#conteneur_principal .element table
 {
     border-top: groove;
     font-size: x-large;

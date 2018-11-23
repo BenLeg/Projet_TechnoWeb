@@ -93,7 +93,7 @@
                                         <th><?php echo $name_product ?></th>
                                     </tr></thead>
                                     <tbody><tr>
-                                        <td>Prix: <?php echo $prix_prod?></td>
+                                        <td>Prix: <?php echo $prix_prod?> €</td>
                                     </tr><tr>
                                         <td>Quantité: <?php echo $quantity ?></td> 
                                     </tr></tbody>
