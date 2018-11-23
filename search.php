@@ -28,7 +28,7 @@ $recherche = $_GET['search'];
                 	?>
 				
                     <div class="element">
-                        <a href="product_descri.php?id=<?php echo $donnees['id']; ?>">
+                        <a href="index.php?page=fiche_produit&id=<?php echo $donnees['id']; ?>">
                             <figure>
                                 <?php 
                                     $image=$donnees['id'];

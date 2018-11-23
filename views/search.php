@@ -14,7 +14,7 @@ $recherche = $_GET['search'];
             <div id="conteneur_principal">
             <?php
             $reponse = $bdd->query('SELECT * FROM products');
-
+            echo "SALUT"
             $traitement_en_cours=true;
             while($traitement_en_cours)
             {             
@@ -28,7 +28,7 @@ $recherche = $_GET['search'];
                 	?>
 				
                     <div class="element">
-                        <a href="product_descri.php?id=<?php echo $donnees['id']; ?>">
+                        <a href=index.php?page=fiche_produit&id=<?php echo $donnees['id']; ?>">
                             <figure>
                                 <?php 
                                     $image=$donnees['id'];

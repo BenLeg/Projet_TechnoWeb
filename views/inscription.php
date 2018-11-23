@@ -22,7 +22,7 @@ die('Erreur: '.$e->getMessage());
 				Inscrivez-vous !
 			</span>
 			<br>
-			<form method="POST" action="inscription.php" class="login-form" required >
+			<form method="POST" action="index.php?page=inscription" class="login-form" required >
 				<br>
 	  			<input class="login-input" type="mail" name="mail" placeholder="Adresse mail" required>
 	  			<br>
@@ -61,7 +61,7 @@ die('Erreur: '.$e->getMessage());
        			</select>
 	  			<br><br>
 	  			<input class="submit-input" type="submit" name="validation" value="Valider">
-	  			<a class="lien" href="accueil.php">Connexion</a>
+	  			<a class="lien" href="index.php?page=accueil">Connexion</a>
 	  			<img src = "images/peacelove.png" id="logo">
 	  			<br>
 			</form>
