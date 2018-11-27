@@ -35,7 +35,7 @@ $recherche = $_POST['recherche'];
 
                      <input class="login-input" type="number" name="Filtrer par prix" placeholder="Numéro de rue" required>
                         <br>
-                */    ';
+                 ';*/   
             } ?>
                     <div class="element">
                         <a href=index.php?page=fiche_produit&id=<?php echo $donnees['id']; ?>">
