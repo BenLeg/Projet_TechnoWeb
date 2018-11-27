@@ -29,6 +29,6 @@
 						'delivery_adress_id' => $data_id
 					));
 					header('Location: index.php?page=accueil');
-  					exit();
+
 
   					?>

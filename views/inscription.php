@@ -6,15 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="style_inscription.css">
 </head>
 
-<?php
-try {
- 	$bdd = new PDO('mysql:host=localhost;dbname=capsules;charset=utf8','root','');
- } catch (Exception $e) {
-die('Erreur: '.$e->getMessage());
- } 
-?>
-
-
 <body>
 	<div id="global">
 		<div class="login-wrap">
