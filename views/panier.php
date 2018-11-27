@@ -26,7 +26,6 @@
         $id=$datareponse['id'];
     }
 
-
     if(isset( $_POST['plus']) )   {      include 'actions/augmenterQuantite.php';        }
     if(isset( $_POST['moins']))       {      include 'actions/diminuerQuantite.php';        }
     if(isset( $_POST['supprimer']) )    {        include 'actions/supprimerArticle.php';    }

@@ -10,6 +10,7 @@
         $quantity=$reponse['quantity'];
     }
     $req->closeCursor();
+    
     $new_qtt=$quantity-1;
     $req=$bdd->prepare("UPDATE order_products SET quantity=:qtt WHERE product_id=:product_id_modif AND order_id=:id");
     $req->execute(array(

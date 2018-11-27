@@ -59,7 +59,7 @@ $recherche = $_POST['recherche'];
             if($trouve == 0){
                 echo '
                 </br></br>
-                    Aucun article ne correspond à votre
+                    Aucun article ne correspond à votre recherche.
                 </br></br></br>
                 ';
             }

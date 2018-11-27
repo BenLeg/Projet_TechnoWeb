@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -35,6 +36,7 @@
                                     <tbody><tr>
                                        <td><?php echo $donnees['unit_price']; ?> €</td>
                                     </tr></tbody>
+
                                 </table>
                             </figure>
                         </a>

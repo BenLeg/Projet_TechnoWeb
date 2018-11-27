@@ -30,8 +30,6 @@
             /*si session utilisateur ouverte*/
             else{
                 include 'actions/ajouterAuPanier.php'
-
-
             ?>
             <section>
                 <div id="cadre_princ">

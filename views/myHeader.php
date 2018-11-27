@@ -10,7 +10,7 @@
 
 	<div class="element3">	<img src="images/peacelove.png" width="50px">	</div>
 
-	<div class="element1"> <a href="index.php?page=accueil"> Mon Peace </a> </div>
+	<div class="element1"> <a href="index.php?page=accueil"> Mon Peace </a>  </div>
 
 	<div class="element2" >
 
