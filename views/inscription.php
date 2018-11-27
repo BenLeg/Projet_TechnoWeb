@@ -25,7 +25,8 @@
 	  			<br>
 	  			<input class="login-input" type="password" name="confirm-password" placeholder="Confirmer mot de passe" required>
 	  			<br>
-	  			<input class="login-input" type="number" name="numero_rue" placeholder="Numéro de rue" required><br>
+	  			<input class="login-input" type="number" name="numero_rue" placeholder="Numéro de rue" required>
+	  			<br>
 	  			<input class="login-input" type="text" name="rue" placeholder="Rue" required>
 	  			<br>
 	  			<input class="login-input" type="text" name="address_two" placeholder="Complément d'adresse" required>

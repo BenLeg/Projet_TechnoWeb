@@ -30,6 +30,12 @@ $recherche = $_POST['recherche'];
                     <h1>Résultat de la recherche</h1>
                         <br>
                         <div id="conteneur_principal">    ';
+                /*    echo '
+                        <br>
+
+                     <input class="login-input" type="number" name="Filtrer par prix" placeholder="Numéro de rue" required>
+                        <br>
+                */    ';
             } ?>
                     <div class="element">
                         <a href=index.php?page=fiche_produit&id=<?php echo $donnees['id']; ?>">

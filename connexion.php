@@ -1,4 +1,4 @@
-<?php
+    <?php
 			
     	$identifiant = $_POST['identifiant'] ;
     	$mdp = $_POST['mdp'] ;
